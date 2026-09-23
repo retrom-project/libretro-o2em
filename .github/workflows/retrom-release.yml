@@ -31,9 +31,14 @@ jobs:
         run: |
           set -euo pipefail
           mkdir "$RUNNER_TEMP/core-release"
-          tag=retrom-core-g679d6fec0496-r1-rc.1
+          tag=retrom-core-g679d6fec0496-r2-rc.1
           if [[ "$GITHUB_REF" == refs/tags/* ]]; then tag="$GITHUB_REF_NAME"; fi
           python3 .github/rpg-runtime/build-release.py --output "$RUNNER_TEMP/core-release" --tag "$tag"
+          mkdir "$RUNNER_TEMP/core-release-check"
+          python3 .github/rpg-runtime/build-release.py --output "$RUNNER_TEMP/core-release-check" --tag "$tag"
+          for asset in "$RUNNER_TEMP/core-release/"*; do
+            cmp "$asset" "$RUNNER_TEMP/core-release-check/$(basename "$asset")"
+          done
       - uses: actions/upload-artifact@v4
         with:
           name: core-release
