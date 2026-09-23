@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "forkRepository": "https://github.com/retrom-project/libretro-o2em",
+  "defaultBranch": "retrom/g679d6fec0496",
+  "upstreamMirrorBranch": "master",
+  "upstreams": [
+    {
+      "role": "emulatorjs-core",
+      "repository": "https://github.com/libretro/libretro-o2em",
+      "refType": "COMMIT",
+      "ref": "679d6fec04963f6e70a7ec217e3d0ebb1fe472fc",
+      "commit": "679d6fec04963f6e70a7ec217e3d0ebb1fe472fc"
+    },
+    {
+      "role": "emulatorjs-retroarch-linker",
+      "repository": "https://github.com/EmulatorJS/RetroArch",
+      "refType": "COMMIT",
+      "ref": "6dd4353937ef48b6ec0bfbdbb15d1c5992d86927",
+      "commit": "6dd4353937ef48b6ec0bfbdbb15d1c5992d86927"
+    }
+  ],
+  "adapterAbi": "emulatorjs-state-v1",
+  "releaseAssets": [
+    "o2em-wasm.data",
+    "LICENSE",
+    "source.tar.gz",
+    "rpg-runtime-release.json"
+  ]
+}

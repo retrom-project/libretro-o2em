@@ -3,6 +3,7 @@
 *.dll
 *.dylib
 *.exe
+.retrom-build/
 .project
 .cproject
 .pydevproject
